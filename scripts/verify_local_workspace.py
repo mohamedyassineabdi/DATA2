@@ -20,6 +20,8 @@ def main():
     a = p.parse_args()
     root = a.root.resolve()
     mapping = root / 'local_only/audit/canonical_mapping.jsonl'
+    if not mapping.is_file():
+        raise SystemExit('Protected local candidate copy is absent; obtain an authorized source transfer first')
     counts = Counter()
     failed = []
     for line in mapping.open(encoding='utf-8'):

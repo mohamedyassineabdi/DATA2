@@ -101,6 +101,8 @@ def verify_qdrant_ids(args, collection, expected):
 
 def verify_inputs():
     mapping = ROOT / 'local_only/audit/canonical_mapping.jsonl'
+    if not mapping.is_file():
+        raise SystemExit('Protected local candidate copy is absent; obtain an authorized source transfer first')
     expected = {}
     for line in mapping.open(encoding='utf-8'):
         item = json.loads(line)

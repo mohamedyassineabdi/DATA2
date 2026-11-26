@@ -141,8 +141,8 @@
     },
     {
       "path": "scripts/build_local_workspace.py",
-      "bytes": 6049,
-      "sha256": "9f682dba8196119438348cbc960790fcc0da0c715bff5a76ebb46fe0e9b552fe"
+      "bytes": 6202,
+      "sha256": "07621d0b83d08395cc2f52178baa32069eb32ffd1a5070fc068387c99fcfc214"
     },
     {
       "path": "scripts/deduplicate_local_pdfs.py",
@@ -151,13 +151,13 @@
     },
     {
       "path": "scripts/load_candidate_stack.py",
-      "bytes": 14325,
-      "sha256": "09b798b8547cb5f40dbe830f0d6926b942568f8d1d4223e7b4ba7869a77218b5"
+      "bytes": 14468,
+      "sha256": "810acdf456efff978df48fd9bef8cadaaba6d6280e46ecf96d64031769783e6b"
     },
     {
       "path": "scripts/package_local_candidate.py",
-      "bytes": 1529,
-      "sha256": "f1b8e342651f9d5301f218ac315e4f3e1c0ab4d38b91bfedfba9a2aa5533efa4"
+      "bytes": 1724,
+      "sha256": "2a3883b99d6f92e7f8d438dba68511455c80f54319dc0bf832f212a230b97639"
     },
     {
       "path": "scripts/prepare_redis_acl.py",
@@ -171,13 +171,13 @@
     },
     {
       "path": "scripts/verify_candidate_data.py",
-      "bytes": 5283,
-      "sha256": "336a81ad8ddf2a1e3f1c75f2c18d89e3afc121209c18b9cf180e79201c720d51"
+      "bytes": 5453,
+      "sha256": "40df8e6cf278631b5536e19113d95f23681d03ba0b0ed51596f3950aaa155e7b"
     },
     {
       "path": "scripts/verify_local_workspace.py",
-      "bytes": 1325,
-      "sha256": "b164c2e801a8d6c27a80ea84381520059d72e930a2acd53ab8f53c5d3e6d7cea"
+      "bytes": 1468,
+      "sha256": "f1b16f515256d1284214c723a88a52b6331c60c0825c78f8bdb15e627be896df"
     },
     {
       "path": "scripts/write_cleanup_manifest.py",
@@ -211,5 +211,5 @@
     }
   ],
   "file_count": 41,
-  "total_bytes": 328116
+  "total_bytes": 328920
 }

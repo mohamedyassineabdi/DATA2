@@ -22,6 +22,8 @@ def rows(relative):
 
 
 def main():
+    if not (DATA / 'processed/ocr/best/pages').is_dir():
+        raise SystemExit('Protected local candidate copy is absent; obtain an authorized source transfer first')
     import pymupdf
     from rdflib import Graph
     from shapely.geometry import shape

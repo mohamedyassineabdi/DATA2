@@ -77,6 +77,8 @@ def main() -> None:
     args = parser.parse_args()
     source = args.source.resolve()
     dest = args.destination.resolve()
+    if not source.is_dir() or not (source / 'raw').is_dir():
+        raise SystemExit('Source tree is missing or is not an authorized Dalila data root')
     if source == dest or source in dest.parents:
         raise SystemExit("Destination must be separate from source")
     audit = dest / "local_only" / "audit"

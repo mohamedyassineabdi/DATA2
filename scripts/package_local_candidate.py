@@ -11,6 +11,8 @@ from pathlib import Path
 root = Path(__file__).resolve().parents[1]
 local = root / 'local_only'
 output = local / 'transfer_pending' / 'DATA2_local_candidate_v2.zip'
+if not (local / 'audit/canonical_mapping.jsonl').is_file() or not (local / 'data').is_dir():
+    raise SystemExit('Protected local candidate copy is absent; refusing to create an empty archive')
 if output.exists():
     raise SystemExit('Archive already exists; refusing to overwrite it')
 output.parent.mkdir(parents=True, exist_ok=True)
