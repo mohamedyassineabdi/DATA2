@@ -16,13 +16,13 @@
     },
     {
       "path": "DATA_STATUS.md",
-      "bytes": 3587,
-      "sha256": "5949f40eab2d657d4e289b1587455eaf7606b37d76bfeaed8bbd80f83a8e5e39"
+      "bytes": 4606,
+      "sha256": "045e76447d60dd46b06d6a5f31362769834373375059ccd463356ccff0a4ca43"
     },
     {
       "path": "README.md",
-      "bytes": 21913,
-      "sha256": "20ea53508658d091ac3b0b6fc29adb044edce26eb5b8ea0b257cedc96d87535f"
+      "bytes": 22255,
+      "sha256": "404eebc34be773b41333fe6ff43f205f0c7612bef66a1793704033f7cfa0d37d"
     },
     {
       "path": "docs/ARCHITECTURE.md",
@@ -31,8 +31,8 @@
     },
     {
       "path": "docs/DATA_CATALOG.md",
-      "bytes": 2826,
-      "sha256": "fbd6f782384fb0b03f9d33d17070cec580fa54830b71624f62d1517870116213"
+      "bytes": 3014,
+      "sha256": "260d185a481b3ab4e4841b6c19837a6b06ca50e2d9c6200997812b6156e71454"
     },
     {
       "path": "docs/DATA_DICTIONARY.md",
@@ -46,18 +46,18 @@
     },
     {
       "path": "docs/PUBLICATION_BOUNDARY.md",
-      "bytes": 2177,
-      "sha256": "40ec1a9e1a41f612ff8472c92d009662e79453cf36ef1e7f5f94ddefd4071fbf"
+      "bytes": 2614,
+      "sha256": "33c85beb7dacc7526acd88759b84adb0199affeccc40dc94e405fd909fc1033a"
     },
     {
       "path": "docs/QUICKSTART.md",
-      "bytes": 2404,
-      "sha256": "944cb4dfcb41fc30f41548cf3e8241e3093cc645eeb42061cb9aab742fcd7bdc"
+      "bytes": 2935,
+      "sha256": "117c7bbff25dbd0acb85b0526660b17579610661dd92bc22b89c09da29d799fa"
     },
     {
       "path": "docs/VERIFICATION.md",
-      "bytes": 3201,
-      "sha256": "1f6cff000bde7b5af5e635a565de4696ee69977c74765d13e34d33a4fef9b0fe"
+      "bytes": 5717,
+      "sha256": "3005cbd5de9da1f2d540ab0d7e6139bb9f344084e4109636788bcc45aa327f05"
     },
     {
       "path": "infrastructure/compose.yaml",
@@ -86,8 +86,8 @@
     },
     {
       "path": "manifests/source_registry.json",
-      "bytes": 1195,
-      "sha256": "26dc0b90862c0301905cfeab0236b10d22af70c4471f0fa0236c88e298e464ab"
+      "bytes": 1304,
+      "sha256": "7f76691f5a09712965e733632d1ed9ac295d0c1881cdf99a6d8bb2cc213e63f7"
     },
     {
       "path": "ontology/candidate-query.rq",
@@ -171,8 +171,8 @@
     },
     {
       "path": "scripts/setup_data.py",
-      "bytes": 19525,
-      "sha256": "ec7d5f6dee6d9bfcc69bfc2a34a4f2738c6fe3cd12e1c7c1091b6eb5c5d33357"
+      "bytes": 19709,
+      "sha256": "9eae4aaa336bd37ce03433d3cb892f14338fc8dabfbab159151d2f32a0bfb89a"
     },
     {
       "path": "scripts/verify_candidate_data.py",
@@ -231,5 +231,5 @@
     }
   ],
   "file_count": 45,
-  "total_bytes": 370170
+  "total_bytes": 375496
 }

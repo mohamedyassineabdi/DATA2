@@ -4,7 +4,7 @@
   "sources": [
     {"source_id": "afi", "url": "https://www.afi.nat.tn/", "reuse_status": "pending_written_permission"},
     {"source_id": "afi_map", "url": "https://afi.e-industrie.gov.tn/", "reuse_status": "pending_written_permission"},
-    {"source_id": "apii", "url": "https://www.tunisieindustrie.nat.tn/", "reuse_status": "pending_source_specific_review"},
+    {"source_id": "apii", "url": "https://www.tunisieindustrie.nat.tn/", "reuse_status": "prior_written_permission_required_for_redistribution", "rights_reference": "https://www.tunisieindustrie.nat.tn/fr/doc.asp?mcat=25&mrub=205"},
     {"source_id": "tia", "url": "https://tia.gov.tn/", "reuse_status": "pending_source_specific_review"},
     {"source_id": "apia", "url": "https://www.apia.com.tn/", "reuse_status": "pending_source_specific_review"},
     {"source_id": "sicad", "url": "https://www.sicad.gov.tn/", "reuse_status": "pending_source_specific_review"},

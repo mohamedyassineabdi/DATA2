@@ -1,16 +1,22 @@
 # Teammate quickstart
 
+The [root README](../README.md) is the complete onboarding guide. The tested entry point is `setup_data.ps1` (or `setup_data.sh` on Linux/macOS). A clone alone contains public tooling and synthetic evaluation drafts; it does **not** contain the real candidate corpus.
+
 ```powershell
 git clone https://github.com/mohamedyassineabdi/DATA2.git
 cd DATA2
-python -m venv .venv
-.venv\Scripts\python -m pip install --use-feature=truststore -r requirements.txt
-.venv\Scripts\python -m unittest discover -s tests -q
+.\setup_data.ps1
 ```
 
-The `--use-feature=truststore` option was needed with pip 24.0 on the verification Windows machine to use its trusted certificate store. If your pip already uses the system trust store or no longer supports this option, run `pip install -r requirements.txt` with your normal organization-approved certificate configuration.
+This public-only command was tested from a fresh clone. On the verification Windows machine, pip 24 needed a retry with its `--use-feature=truststore` option; the script used the system certificate store and completed. For actual candidate data, obtain a separately approved, encrypted transfer of the existing archive, decrypt it locally and run:
 
-The public clone includes the ontology and 224 synthetic evaluation drafts. It cannot read AFI PDFs, articles, lots or GIS because those bytes are intentionally not public. To reconstruct them, first obtain explicit source reuse and access approval, then receive a separately encrypted source tree from the owner. After local extraction:
+```powershell
+.\setup_data.ps1 -Archive 'C:\approved\DATA2_local_candidate_v2.zip'
+```
+
+The v2 archive has SHA-256 `0addeb821a93e0d96bf40bc2edf893e184b221ec81d665cfbfc52514a3f0b1a2`. It is not on GitHub; the owner's local ZIP is unencrypted and not approved for transfer. The complete installation from that ZIP was tested in an isolated fresh clone. Other supported modes and troubleshooting are in the README.
+
+The public clone includes the ontology and 224 synthetic evaluation drafts. It cannot read AFI PDFs, articles, lots or GIS without an approved source transfer. If an authorized teammate has the **historical source workspace instead of the v2 archive**, the older reconstruction path remains available:
 
 ```powershell
 .venv\Scripts\python scripts/build_local_workspace.py --source 'C:\approved\dalila_data'

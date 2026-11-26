@@ -65,8 +65,8 @@ def python_in_venv():
 
 
 def ensure_python(*, install):
-    if sys.version_info < (3, 10):
-        raise RuntimeError('Python 3.10 or newer is required')
+    if sys.version_info < (3, 11):
+        raise RuntimeError('Python 3.11 or newer is required by the pinned dependencies')
     interpreter = python_in_venv()
     if not interpreter.is_file():
         if not install:
@@ -310,6 +310,8 @@ def main(argv=None):
     public_count = verify_public()
     if args.archive and args.archive_url:
         parser.error('Choose a local archive or approved HTTPS URL, not both')
+    if args.archive_url and not args.archive_sha256:
+        parser.error('An approved HTTPS archive URL requires an explicit --archive-sha256')
     if args.mode == 'verify' and (args.archive or args.archive_url):
         parser.error('Verification mode does not install an archive')
     if args.archive or args.archive_url:
@@ -366,7 +368,7 @@ def main(argv=None):
                  '--env-file', ENV])
             summary['database_queries'] = 'passed'
         elif args.mode == 'db-only':
-            summary['database_targets'] = 'initialized_empty_no_import'
+            summary['database_targets'] = 'services_started_no_import_or_overwrite'
     elif need_db:
         summary['database_targets'] = 'skipped_no_authorized_corpus'
     elif args.mode == 'verify' and have_data and ENV.is_file() and command_exists('docker'):

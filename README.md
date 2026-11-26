@@ -2,7 +2,7 @@
 
 Dalila is a planned multilingual industrial-investment assistant for Tunisia. AFI (Agence Foncière Industrielle) supplies industrial-zone, lot and regulatory material. DATA2 prepares evidence-backed data for a **future, separate backend**; it does not implement a chatbot. The eight required languages are Tunisian Arabic (including Arabizi and code-switching), French, English, Modern Standard Arabic, Algerian Arabic, Libyan Arabic, German and Turkish.
 
-> **Access boundary:** this public GitHub repository contains project-authored tools, ontology, schemas, manifests and 224 synthetic evaluation drafts. It **does not contain original AFI SQL, PDFs, OCR, institutional passages, lots, GIS, retrieval chunks or RDF instances**. The owner confirmed no written public redistribution permission exists for the source material. Actual candidate data requires a separately approved, encrypted transfer; no team download location is configured. See [publication boundary](docs/PUBLICATION_BOUNDARY.md).
+> **Access boundary:** this public GitHub repository contains project-authored tools, ontology, schemas, manifests and 224 synthetic evaluation drafts. It **does not contain original AFI SQL, PDFs, OCR, institutional passages, lots, GIS, retrieval chunks or RDF instances**. The owner confirmed no written public redistribution permission exists for the source material. [APII's official legal notice](https://www.tunisieindustrie.nat.tn/fr/doc.asp?mcat=25&mrub=205) also requires prior written authorization for redistribution of its site content. Other source rights need individual review. Actual candidate data requires a separately approved, encrypted transfer; no team download location is configured. See [publication boundary](docs/PUBLICATION_BOUNDARY.md).
 
 ## Contents
 
@@ -19,7 +19,7 @@ Dalila is a planned multilingual industrial-investment assistant for Tunisia. AF
 
 ## Quick start
 
-On Windows, with Python 3.10+, Git and Docker Desktop installed:
+On Windows, with Python 3.11+, Git and Docker Desktop installed (Python 3.11 was tested):
 
 ```powershell
 git clone https://github.com/mohamedyassineabdi/DATA2.git
@@ -51,7 +51,7 @@ Implemented modes and options:
 .\setup_data.ps1 -Mode load-qdrant
 ```
 
-`data-only` verifies the corpus without Docker; `db-only` starts empty isolated services; `verify` checks installed files and reachable database targets. Individual `load-*` modes require the data and `.venv` from an earlier run. `-WithRedis` adds optional Redis. `-Project dalila-data2-<name>` selects another isolated project; `-SkipDependencies` uses an existing `.venv`. The shell wrapper takes corresponding `--mode`, `--archive`, `--project`, `--with-redis`, `--skip-dependencies` options.
+`data-only` verifies the corpus without Docker; `db-only` starts isolated services without importing or overwriting data; `verify` checks installed files and reachable database targets. Individual `load-*` modes require the data and `.venv` from an earlier run. `-WithRedis` adds optional Redis. `-Project dalila-data2-<name>` selects another isolated project; `-SkipDependencies` uses an existing `.venv`. The shell wrapper takes corresponding `--mode`, `--archive`, `--project`, `--with-redis`, `--skip-dependencies` options.
 
 An approved HTTPS team-storage endpoint may be used with `-ArchiveUrl <url> -ArchiveSha256 <64-hex-digest>`; set `DATA2_ARCHIVE_BEARER_TOKEN` in your local shell for bearer authentication. No endpoint is approved/configured today. Downloads stay in ignored `local_only/transfer_pending/`, use HTTPS and resume only if the server honors byte ranges. Never put tokens in URLs or Git. A nonstandard local archive also requires `-ArchiveSha256`.
 
@@ -177,7 +177,15 @@ print(len(zones), len(lots), len(large_surface), len(observations),
       len(articles), len(passages), len(chunks), len(gis), len(document_hashes), len(graph))
 ```
 
-For original document references, combine `document_sha256`, `source_page` and `source_urls` with the local PDF mapping; never reconstruct a filename from a guessed title. A tested SQL aggregate can be run with `docker compose --env-file infrastructure/.env -f infrastructure/compose.yaml -p dalila-data2-local exec -T mariadb sh -c 'MYSQL_PWD="$MARIADB_ROOT_PASSWORD" mariadb -uroot afi_restricted -N -e "SELECT COUNT(*) FROM lots;"'`. The [query script](scripts/query_candidate_stack.py) tests SQL, PostGIS, SPARQL and Qdrant without displaying source records. A frontend map must wait for reviewed, CRS-identified geometries; this repo has no map-serving endpoint.
+For original document references, combine `document_sha256`, `source_page` and `source_urls` with the local PDF mapping; never reconstruct a filename from a guessed title. A tested PowerShell SQL aggregate is:
+
+```powershell
+@'
+MYSQL_PWD="$MARIADB_ROOT_PASSWORD" mariadb -uroot afi_restricted -N -e 'SELECT COUNT(*) FROM lots;'
+'@ | docker compose --env-file infrastructure/.env -f infrastructure/compose.yaml -p dalila-data2-local exec -T mariadb sh
+```
+
+It returned `6579` in the fresh-clone test. The [query script](scripts/query_candidate_stack.py) tests SQL, PostGIS, SPARQL and Qdrant without displaying source records. A frontend map must wait for reviewed, CRS-identified geometries; this repo has no map-serving endpoint.
 
 ## Backend integration
 
@@ -197,7 +205,7 @@ Use `-Archive` rather than manually extracting. Verify independently with `Get-F
 
 | Symptom | Action |
 | --- | --- |
-| Python/Git missing | Install Python 3.10+ and Git, add to PATH, reopen shell. |
+| Python/Git missing | Install Python 3.11+ and Git, add to PATH, reopen shell. |
 | PowerShell blocks scripts | If permitted by local policy, use `powershell -ExecutionPolicy Bypass -File .\setup_data.ps1` for one invocation. |
 | Docker stopped / Compose unavailable | Start Docker Desktop; check `docker compose version`. `data-only` needs no Docker. |
 | Virtual environment / pip TLS failure | Re-run setup. On pip 24/Windows, use `python -m pip install --use-feature=truststore -r requirements.txt` with the system trust store; never disable TLS verification. |

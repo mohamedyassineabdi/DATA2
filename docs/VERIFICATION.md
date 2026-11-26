@@ -21,6 +21,18 @@ Performed locally on 2026-11-26. The old Dalila services and frozen manifest wer
 | Fresh virtual environment | Dependencies installed with pip 24.0 `--use-feature=truststore`; five tests passed; ontology parsed to 157 triples and SHACL shapes to 69 triples |
 | Regression suites | Five DATA2 unit tests and 117 existing Dalila foundation tests passed |
 
+## Fresh-clone onboarding test
+
+On 2026-11-26, a new remote clone at `DATA2_onboarding_verify` started without protected data or access to the historical workspace. The first attempt detected two CRLF-derived manifest mismatches after Git checkout; the manifest writer now rejects CRLF and the corrected remote clone passed public setup. Python dependencies installed using the Windows system trust store. `setup_data.ps1` reported `public_only` and started no empty databases.
+
+The same clone then installed the existing verified v2 archive through `setup_data.ps1 -Archive` into ignored `local_only/`. Its 3,383 ZIP entries, archive SHA-256, 3,377 canonical source mappings and all structural record checks passed. The isolated project `dalila-data2-onboard-verify` generated fresh local credentials, selected loopback ports, started MariaDB/PostGIS/Fuseki/Qdrant and optional Redis, and loaded 13 SQL tables/15,841 rows, 12,006 GIS candidates (9,945 staged, SRID 0), 185 zones, 6,579 lots, 93,495 RDF triples and 10,381 Qdrant sparse points. Aggregate SQL, PostGIS, SPARQL and lexical retrieval queries passed; Redis returned `PONG` through its ACL. Nine DATA2 unit tests passed in that clone.
+
+The README's PowerShell here-string SQL command returned 6,579. The generated `.env` and Redis ACL inherited filesystem ACLs limited to the current user, local administrators and SYSTEM on this Windows host. `docker compose config --quiet` passed for the generated environment. This local ACL check does not establish a portable production secret-management design.
+
+The unauthenticated GitHub repository API reported `private=false`, `visibility=public` and default branch `main`. That confirms the public access boundary; it does not confer redistribution rights on source material.
+
+A second `complete` run verified the same corpus and found all four database targets complete without reimport. `verify`, `data-only`, `db-only` and each `load-mariadb`, `load-postgis`, `load-fuseki`, `load-qdrant` mode ran against the already-populated project and passed without reimporting. The old `db-only` summary misleadingly said `initialized_empty_no_import` even for populated services; it now reports only that services started without importing or overwriting. An approved HTTPS download was **not** tested because no approved endpoint exists. A new empty-project `db-only` run and the Linux/macOS wrapper were not tested on this Windows machine. The original Dalila workspace and services were not used by this clone.
+
 The isolated database project used alternate loopback ports and separate persistent volumes. `docker compose config --quiet` passed. The first PostGIS test exposed implicit GeoJSON SRID 4326; the loader was corrected to set SRID 0, the isolated candidate schema was reset, and the clean import then passed. The first Fuseki test exposed an `internal` Docker network that suppressed host port publishing on this host; the Compose template now uses a private project bridge with loopback-bound ports. No source data was sent to an external service.
 
 After recording aggregate results, the `dalila-data2-verify` containers and their four test-only volumes were removed. The pre-existing `dalila-foundation-*` containers remained healthy throughout.

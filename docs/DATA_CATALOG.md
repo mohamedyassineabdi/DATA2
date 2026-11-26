@@ -1,6 +1,6 @@
 # Data catalog
 
-DATA2 separates public project-owned files from the protected local candidate corpus. Paths below are relative to the repository root. The `local_only/` tree is ignored by Git and is available only after an approved local transfer and `build_local_workspace.py`.
+DATA2 separates public project-owned files from the protected local candidate corpus. Paths below are relative to the repository root. The `local_only/` tree is ignored by Git and is available only after an approved local transfer installed with `setup_data.ps1 -Archive` (or, for the historical source tree, `build_local_workspace.py`). The [root README](../README.md) has the measured sizes, source/access status and complete installation workflow.
 
 | Local path | Format | Measured quantity | Status |
 | --- | --- | ---: | --- |
