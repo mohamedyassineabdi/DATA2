@@ -18,6 +18,7 @@ CANONICAL = {
     "raw/documents": "original/pdfs",
     "raw/web": "original/web",
     "raw/restricted/sql": "original/sql",
+    "raw/restricted/ocr_benchmark/pilot_v1": "original/ocr_pilot",
     "processed/ocr/best_candidate_v1": "processed/ocr/best",
     "processed/ocr/empty_retry_v1": "processed/ocr/empty_alternatives",
     "processed/ocr/quarantine_v1": "processed/ocr/standard_and_native",
@@ -30,6 +31,10 @@ CANONICAL = {
     "processed/gis/quality_candidates_v1": "processed/gis/quality",
     "processed/web/institutional_candidates_v2": "processed/institutional/pages",
     "processed/web/structured_candidates_v2": "processed/institutional/structured",
+    "processed/final_phase2_candidate_v1": "manifests/frozen_candidate",
+    "manifests": "manifests/source_registries",
+    "reports/document_reconciliation/matrix_v2": "review/document_identities",
+    "reports/review/deduplicated_v2": "review/prioritized_packets",
 }
 
 

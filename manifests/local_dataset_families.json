@@ -5,6 +5,7 @@
   "frozen_candidate_manifest_sha256": "85e1cc56941f2b960ed364bd02068adfdbce1035f059df736cee847dfba1a11e",
   "families": [
     {"family": "original_pdfs", "distinct_files": 114, "unit": "sha256_unique_pdf"},
+    {"family": "original_ocr_pilot_images", "records": 30, "unit": "png_image"},
     {"family": "ocr_best_page_checkpoints", "records": 2996, "unit": "page_json"},
     {"family": "regulatory_article_candidates", "records": 7587, "unit": "jsonl_row"},
     {"family": "institutional_passages", "records": 2794, "unit": "jsonl_row"},
@@ -13,7 +14,9 @@
     {"family": "normalized_zones", "records": 185, "unit": "jsonl_row"},
     {"family": "gis_source_candidates", "records": 12006, "unit": "jsonl_row"},
     {"family": "institutional_page_candidates", "records": 345, "unit": "jsonl_row"},
-    {"family": "structured_web_candidates", "records": 977, "unit": "jsonl_row"}
+    {"family": "structured_web_candidates", "records": 977, "unit": "jsonl_row"},
+    {"family": "document_identity_matrix", "records": 106, "unit": "reference"},
+    {"family": "pending_review_packets", "records": 6905, "unit": "jsonl_row"}
   ],
   "note": "Counts measure local candidate material. No source-derived rows are included in the public repository. The full path and SHA-256 mapping remains in ignored local_only/audit/."
 }

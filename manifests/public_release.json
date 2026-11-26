@@ -16,8 +16,8 @@
     },
     {
       "path": "DATA_STATUS.md",
-      "bytes": 1999,
-      "sha256": "a4213e2246ff8df5f399f207d4a66c2a88ac596836e7b3daa6e2415e14403070"
+      "bytes": 2173,
+      "sha256": "3d4fe51f2898cfb63c8c7a9165071e6bf302b60132950c0ce919761053b84865"
     },
     {
       "path": "README.md",
@@ -81,8 +81,8 @@
     },
     {
       "path": "scripts/build_local_workspace.py",
-      "bytes": 5714,
-      "sha256": "f848cf52102caa0717cd413e9e45ad970f7eab8d7c8054bb3490b7cced6fa19d"
+      "bytes": 6049,
+      "sha256": "9f682dba8196119438348cbc960790fcc0da0c715bff5a76ebb46fe0e9b552fe"
     },
     {
       "path": "scripts/deduplicate_local_pdfs.py",
@@ -111,5 +111,5 @@
     }
   ],
   "file_count": 21,
-  "total_bytes": 273533
+  "total_bytes": 274042
 }
