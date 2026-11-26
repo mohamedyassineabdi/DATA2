@@ -18,6 +18,7 @@ Performed locally on 2026-11-26. The old Dalila services and frozen manifest wer
 | Negative tests | All four loaders refused an existing target; MariaDB/PostGIS wrong passwords and Fuseki/Qdrant wrong credentials were denied |
 | Public Git audit | No raw/processed/local-only path, source binary, email-shaped string, token or private key in tracked files |
 | Fresh public clone | Manifest SHA-256 verification and five unit tests passed; remote main matched local commit |
+| Fresh virtual environment | Dependencies installed with pip 24.0 `--use-feature=truststore`; five tests passed; ontology parsed to 157 triples and SHACL shapes to 69 triples |
 | Regression suites | Five DATA2 unit tests and 117 existing Dalila foundation tests passed |
 
 The isolated database project used alternate loopback ports and separate persistent volumes. `docker compose config --quiet` passed. The first PostGIS test exposed implicit GeoJSON SRID 4326; the loader was corrected to set SRID 0, the isolated candidate schema was reset, and the clean import then passed. The first Fuseki test exposed an `internal` Docker network that suppressed host port publishing on this host; the Compose template now uses a private project bridge with loopback-bound ports. No source data was sent to an external service.

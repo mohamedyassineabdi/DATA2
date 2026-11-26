@@ -4,9 +4,11 @@
 git clone https://github.com/mohamedyassineabdi/DATA2.git
 cd DATA2
 python -m venv .venv
-.venv\Scripts\python -m pip install -r requirements.txt
+.venv\Scripts\python -m pip install --use-feature=truststore -r requirements.txt
 .venv\Scripts\python -m unittest discover -s tests -q
 ```
+
+The `--use-feature=truststore` option was needed with pip 24.0 on the verification Windows machine to use its trusted certificate store. If your pip already uses the system trust store or no longer supports this option, run `pip install -r requirements.txt` with your normal organization-approved certificate configuration.
 
 The public clone includes the ontology and 224 synthetic evaluation drafts. It cannot read AFI PDFs, articles, lots or GIS because those bytes are intentionally not public. To reconstruct them, first obtain explicit source reuse and access approval, then receive a separately encrypted source tree from the owner. After local extraction:
 

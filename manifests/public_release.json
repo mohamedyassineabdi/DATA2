@@ -16,8 +16,8 @@
     },
     {
       "path": "DATA_STATUS.md",
-      "bytes": 3334,
-      "sha256": "a4f20c1ccc5da22ae80b4a8b497ad9b67075953ef9ade2c6c03815724dfb69e1"
+      "bytes": 3587,
+      "sha256": "5949f40eab2d657d4e289b1587455eaf7606b37d76bfeaed8bbd80f83a8e5e39"
     },
     {
       "path": "README.md",
@@ -51,13 +51,13 @@
     },
     {
       "path": "docs/QUICKSTART.md",
-      "bytes": 2054,
-      "sha256": "f7fb25b487556bc0f6a9eaeae390788517843d5e0d361cad1d3d226d999ad30f"
+      "bytes": 2404,
+      "sha256": "944cb4dfcb41fc30f41548cf3e8241e3093cc645eeb42061cb9aab742fcd7bdc"
     },
     {
       "path": "docs/VERIFICATION.md",
-      "bytes": 3023,
-      "sha256": "60c3735240757ed4402d8e591af91ecaa138ac3678427a4b25585385ca039470"
+      "bytes": 3201,
+      "sha256": "1f6cff000bde7b5af5e635a565de4696ee69977c74765d13e34d33a4fef9b0fe"
     },
     {
       "path": "infrastructure/compose.yaml",
@@ -111,8 +111,8 @@
     },
     {
       "path": "requirements.txt",
-      "bytes": 43,
-      "sha256": "db02c572586d3f4adaa9d3d2652cf3151dc6977a830753ddfbf6b7ebec12cc55"
+      "bytes": 44,
+      "sha256": "98cb4b99915c07822ad32111480038dd185efe1a19610d2707aeb352c2f79e09"
     },
     {
       "path": "schemas/evaluation-case.schema.json",
@@ -211,5 +211,5 @@
     }
   ],
   "file_count": 41,
-  "total_bytes": 328920
+  "total_bytes": 329702
 }

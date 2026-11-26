@@ -12,4 +12,6 @@ The original 30-dataset frozen candidate release remains in the source workspace
 
 Five DATA2 unit tests and 117 tests in the existing Dalila foundation worktree passed. The historical AFI capture ZIP was not present in the current user workspace, so the 2,852 capture bodies reported by a previous archive audit were not re-exported as raw HTML/JSON here.
 
+An independent fresh clone installed the listed Python requirements in a new virtual environment using pip 24.0 with Windows trust-store support. Its five tests passed, and the public ontology and SHACL files parsed to 157 and 69 triples respectively.
+
 A local-only, unencrypted archive for later authorized transfer contains **3,383 files / 1,257,052,806 bytes** at `local_only/transfer_pending/DATA2_local_candidate_v2.zip`; SHA-256 `0addeb821a93e0d96bf40bc2edf893e184b221ec81d665cfbfc52514a3f0b1a2`. ZIP integrity and manifest checks passed. It must not be uploaded or sent until rights, recipient approval and encryption are complete.
