@@ -1,0 +1,19 @@
+{
+  "schema_version": "1",
+  "full_file_level_mapping": "local_only/audit/canonical_mapping.jsonl",
+  "status": "local_only_mapping_not_public_source_data",
+  "rules": [
+    {"old_prefix": "raw/documents/", "new_prefix": "local_only/data/original/pdfs/"},
+    {"old_prefix": "raw/web/", "new_prefix": "local_only/data/original/web/"},
+    {"old_prefix": "raw/restricted/sql/", "new_prefix": "local_only/data/original/sql/"},
+    {"old_prefix": "raw/restricted/ocr_benchmark/pilot_v1/", "new_prefix": "local_only/data/original/ocr_pilot/"},
+    {"old_prefix": "processed/ocr/best_candidate_v1/", "new_prefix": "local_only/data/processed/ocr/best/"},
+    {"old_prefix": "processed/knowledge/candidates_v7/", "new_prefix": "local_only/data/processed/regulations_and_institutional/"},
+    {"old_prefix": "processed/knowledge/rdf_candidates_v7/", "new_prefix": "local_only/data/processed/knowledge_graph/"},
+    {"old_prefix": "processed/retrieval/candidate_chunks_v2/", "new_prefix": "local_only/data/processed/retrieval/"},
+    {"old_prefix": "processed/relational/clean_candidates_v1/", "new_prefix": "local_only/data/processed/relational/"},
+    {"old_prefix": "processed/gis/candidates_v1/", "new_prefix": "local_only/data/processed/gis/candidates/"},
+    {"old_prefix": "processed/web/institutional_candidates_v2/", "new_prefix": "local_only/data/processed/institutional/pages/"}
+  ],
+  "note": "Three exact duplicate PDF source paths map to their first byte-identical local copy; source paths and hashes remain in the full mapping."
+}

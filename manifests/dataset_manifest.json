@@ -1,0 +1,17 @@
+{
+  "schema_version": "1",
+  "release_kind": "public_metadata_with_protected_local_candidates",
+  "public_dataset": {
+    "path": "schemas/examples/multilingual-evaluation-drafts.json",
+    "records": 224,
+    "status": "synthetic_draft_no_gold_answers"
+  },
+  "protected_candidate_manifest": "local_only/audit/dataset_manifest.json",
+  "protected_candidate_file_count": 3374,
+  "protected_source_file_mappings": 3377,
+  "protected_status": "LOCAL_ONLY_NO_EXTERNAL_TRANSFER",
+  "major_families": "manifests/local_dataset_families.json",
+  "public_byte_manifest": "manifests/public_release.json",
+  "frozen_source_manifest_sha256": "85e1cc56941f2b960ed364bd02068adfdbce1035f059df736cee847dfba1a11e",
+  "note": "The complete file-level SHA-256, original paths, formats and counts are stored only in the ignored protected local manifest. Public source-bearing data is absent pending rights and privacy review."
+}

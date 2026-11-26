@@ -1,0 +1,14 @@
+{
+  "schema_version": "1",
+  "note": "Identifiers and public URLs only. Existing captures and supplied SQL remain local; this registry does not grant collection or redistribution rights.",
+  "sources": [
+    {"source_id": "afi", "url": "https://www.afi.nat.tn/", "reuse_status": "pending_written_permission"},
+    {"source_id": "afi_map", "url": "https://afi.e-industrie.gov.tn/", "reuse_status": "pending_written_permission"},
+    {"source_id": "apii", "url": "https://www.tunisieindustrie.nat.tn/", "reuse_status": "pending_source_specific_review"},
+    {"source_id": "tia", "url": "https://tia.gov.tn/", "reuse_status": "pending_source_specific_review"},
+    {"source_id": "apia", "url": "https://www.apia.com.tn/", "reuse_status": "pending_source_specific_review"},
+    {"source_id": "sicad", "url": "https://www.sicad.gov.tn/", "reuse_status": "pending_source_specific_review"},
+    {"source_id": "formalites_archive", "url": "https://formalites.industrie.gov.tn/", "reuse_status": "pending_source_specific_review"},
+    {"source_id": "afi_supplied_sql", "url": null, "provenance": "hackathon-supplied local dump", "reuse_status": "pending_written_permission_and_privacy_projection"}
+  ]
+}
