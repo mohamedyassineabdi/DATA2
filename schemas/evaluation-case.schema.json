@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dalila independently reviewed evaluation case",
+  "type": "object",
+  "required": [
+    "case_id",
+    "language",
+    "question",
+    "evaluation_dimensions",
+    "expected_uncertainty",
+    "evidence",
+    "review_status"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "language": {
+      "enum": [
+        "ar-TN",
+        "fr",
+        "en",
+        "ar-001",
+        "ar-DZ",
+        "ar-LY",
+        "de",
+        "tr"
+      ]
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evaluation_dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": [
+          "retrieval",
+          "factual_correctness",
+          "citations",
+          "multilingual",
+          "uncertainty",
+          "conflicting_sources"
+        ]
+      }
+    },
+    "expected_uncertainty": {
+      "enum": [
+        "known",
+        "unknown",
+        "stale",
+        "conflicting"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "page": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "review_status": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "validated"
+      ]
+    },
+    "expected_behavior": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scenario": {
+      "enum": [
+        "availability",
+        "retrieval",
+        "structured_sql",
+        "spatial",
+        "regulatory",
+        "multi_turn",
+        "conflict",
+        "abstention"
+      ]
+    },
+    "script_variant": {
+      "enum": [
+        "arabic",
+        "latin",
+        "arabizi",
+        "code_switching"
+      ]
+    },
+    "family_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dialogue_context": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "text"
+        ],
+        "properties": {
+          "role": {
+            "enum": [
+              "user",
+              "assistant"
+            ]
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "difficulty": {
+      "enum": [
+        "standard",
+        "advanced"
+      ]
+    },
+    "split": {
+      "enum": [
+        "tuning",
+        "development",
+        "held_out"
+      ]
+    },
+    "expected_answer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "relevance_judgments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "relevance",
+          "review_status"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "relevance": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "review_status": {
+            "enum": [
+              "draft",
+              "reviewed",
+              "validated"
+            ]
+          }
+        }
+      }
+    },
+    "required_citations": {
+      "type": "boolean"
+    },
+    "forbidden_unsupported_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "review_status": {
+            "const": "validated"
+          }
+        },
+        "required": [
+          "review_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "evidence": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

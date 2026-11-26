@@ -1,0 +1,18 @@
+@prefix d: <https://dalila.example/vocab/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+d:EvidenceShape a sh:NodeShape ; sh:targetClass d:EvidenceSource ;
+    sh:property [ sh:path d:sourceHash ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^[0-9a-f]{64}$" ] .
+d:ArticleShape a sh:NodeShape ; sh:targetClass d:LegalArticleCandidate ;
+    sh:property [ sh:path d:sourcePage ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ] ;
+    sh:property [ sh:path d:articleNumber ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path d:hasEvidence ; sh:minCount 1 ; sh:class d:EvidenceSource ] ;
+    sh:property [ sh:path d:reviewStatus ; sh:minCount 1 ; sh:in ( "unvalidated" "reviewed" "validated" ) ] .
+d:PassageShape a sh:NodeShape ; sh:targetClass d:InstitutionalPassageCandidate ;
+    sh:property [ sh:path d:hasEvidence ; sh:minCount 1 ; sh:class d:EvidenceSource ] ;
+    sh:property [ sh:path d:reviewStatus ; sh:minCount 1 ; sh:in ( "unvalidated" "reviewed" "validated" ) ] .
+d:EntityCandidateShape a sh:NodeShape ;
+    sh:targetClass d:IndustrialZone, d:Plot, d:Infrastructure ;
+    sh:property [ sh:path d:hasEvidence ; sh:minCount 1 ; sh:class d:EvidenceSource ] ;
+    sh:property [ sh:path d:reviewStatus ; sh:minCount 1 ; sh:in ( "unvalidated" "reviewed" "validated" ) ] .

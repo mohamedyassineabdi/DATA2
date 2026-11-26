@@ -1,0 +1,12 @@
+local_only/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.venv/
+infrastructure/redis-users.local.acl

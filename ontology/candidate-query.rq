@@ -1,0 +1,6 @@
+PREFIX d: <https://dalila.example/vocab/>
+SELECT ?article ?page ?number ?source WHERE {
+  ?article a d:LegalArticleCandidate ; d:sourcePage ?page ;
+           d:articleNumber ?number ; d:hasEvidence ?source ; d:reviewStatus "unvalidated" .
+}
+LIMIT 20

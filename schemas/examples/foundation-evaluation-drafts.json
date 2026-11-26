@@ -1,0 +1,297 @@
+{
+  "status": "draft; factual answers and source references pending review",
+  "language_note": "Required language set confirmed; all linguistic variants need review.",
+  "cases": [
+    {
+      "case_id": "ar-TN-abstention-1",
+      "language": "ar-TN",
+      "question": "هل المقسم متاح توّا؟ اذكر المصدر.",
+      "scenario": "abstention",
+      "script_variant": "arabic",
+      "family_id": "abstention",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "stale",
+      "expected_behavior": "Do not infer current availability from a dated snapshot.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "fr-abstention-1",
+      "language": "fr",
+      "question": "Le lot est-il disponible actuellement ? Veuillez citer la source.",
+      "scenario": "abstention",
+      "script_variant": "latin",
+      "family_id": "abstention",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "stale",
+      "expected_behavior": "Do not infer current availability from a dated snapshot.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "en-abstention-1",
+      "language": "en",
+      "question": "Is the plot currently available? Please cite the source.",
+      "scenario": "abstention",
+      "script_variant": "latin",
+      "family_id": "abstention",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "stale",
+      "expected_behavior": "Do not infer current availability from a dated snapshot.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "ar-001-abstention-1",
+      "language": "ar-001",
+      "question": "هل المقسم متاح حاليا؟ يرجى ذكر المصدر.",
+      "scenario": "abstention",
+      "script_variant": "arabic",
+      "family_id": "abstention",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "stale",
+      "expected_behavior": "Do not infer current availability from a dated snapshot.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "ar-DZ-abstention-1",
+      "language": "ar-DZ",
+      "question": "واش القطعة متاحة حاليا؟ اذكر المصدر.",
+      "scenario": "abstention",
+      "script_variant": "arabic",
+      "family_id": "abstention",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "stale",
+      "expected_behavior": "Do not infer current availability from a dated snapshot.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "ar-LY-abstention-1",
+      "language": "ar-LY",
+      "question": "هل القطعة متاحة توا؟ اذكر المصدر.",
+      "scenario": "abstention",
+      "script_variant": "arabic",
+      "family_id": "abstention",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "stale",
+      "expected_behavior": "Do not infer current availability from a dated snapshot.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "de-abstention-1",
+      "language": "de",
+      "question": "Ist das Grundstück derzeit verfügbar? Bitte die Quelle nennen.",
+      "scenario": "abstention",
+      "script_variant": "latin",
+      "family_id": "abstention",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "stale",
+      "expected_behavior": "Do not infer current availability from a dated snapshot.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "tr-abstention-1",
+      "language": "tr",
+      "question": "Parsel şu anda müsait mi? Lütfen kaynağı belirtin.",
+      "scenario": "abstention",
+      "script_variant": "latin",
+      "family_id": "abstention",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "stale",
+      "expected_behavior": "Do not infer current availability from a dated snapshot.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "en-structured_sql-1",
+      "language": "en",
+      "question": "Which read-only SQL query lists plot surfaces for the specified zone? Please cite the source.",
+      "scenario": "structured_sql",
+      "script_variant": "latin",
+      "family_id": "structured_sql",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "unknown",
+      "expected_behavior": "Use read-only authorized schema; no availability inference.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "en-retrieval-1",
+      "language": "en",
+      "question": "What services are documented for the specified zone? Please cite the source.",
+      "scenario": "retrieval",
+      "script_variant": "latin",
+      "family_id": "retrieval",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "unknown",
+      "expected_behavior": "Cite reviewed evidence or state that it is unverified.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "en-spatial-1",
+      "language": "en",
+      "question": "Which plots fall within the specified zone boundary? Please cite the source.",
+      "scenario": "spatial",
+      "script_variant": "latin",
+      "family_id": "spatial",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "unknown",
+      "expected_behavior": "Do not perform spatial containment until CRS and axis order are verified.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "en-regulatory-1",
+      "language": "en",
+      "question": "Does the cited regulation prohibit the specified activity in this zone? Please cite the source.",
+      "scenario": "regulatory",
+      "script_variant": "latin",
+      "family_id": "regulatory",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "unknown",
+      "expected_behavior": "Do not assert legal text or applicability without review and source pages.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "en-multi_turn-1",
+      "language": "en",
+      "question": "What documents are required for that zone? Please cite the source.",
+      "scenario": "multi_turn",
+      "script_variant": "latin",
+      "family_id": "multi_turn",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "unknown",
+      "expected_behavior": "Resolve the reference from context or request clarification; do not invent requirements.",
+      "evidence": [],
+      "review_status": "draft",
+      "dialogue_context": [
+        {
+          "role": "user",
+          "text": "[An unspecified industrial zone was discussed.]"
+        }
+      ]
+    },
+    {
+      "case_id": "en-conflict-1",
+      "language": "en",
+      "question": "The two sources show different prices. How should I understand them? Please cite the source.",
+      "scenario": "conflict",
+      "script_variant": "latin",
+      "family_id": "conflict",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "conflicting",
+      "expected_behavior": "Preserve both sourced values and dates; do not resolve by guessing.",
+      "evidence": [],
+      "review_status": "draft"
+    },
+    {
+      "case_id": "en-abstention-1",
+      "language": "en",
+      "question": "Is the plot currently available? Please cite the source.",
+      "scenario": "abstention",
+      "script_variant": "latin",
+      "family_id": "abstention",
+      "evaluation_dimensions": [
+        "retrieval",
+        "factual_correctness",
+        "citations",
+        "multilingual",
+        "uncertainty"
+      ],
+      "expected_uncertainty": "stale",
+      "expected_behavior": "Do not infer current availability from a dated snapshot.",
+      "evidence": [],
+      "review_status": "draft"
+    }
+  ]
+}

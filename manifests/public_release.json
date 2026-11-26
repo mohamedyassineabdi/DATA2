@@ -1,0 +1,115 @@
+{
+  "schema_version": "1",
+  "release_kind": "public_tooling_and_synthetic_drafts",
+  "source_bearing_datasets_included": false,
+  "validation_status": "no_validated_knowledge",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 58,
+      "sha256": "dbe8957a344a6bff1415c8c9b5c24c492df52226f4f14d17a3f16eba5cd01428"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 125,
+      "sha256": "0ca69967d67a340ed9500c60793c8505eabc30d5b0fa9859fff68b170b625701"
+    },
+    {
+      "path": "DATA_STATUS.md",
+      "bytes": 1999,
+      "sha256": "a4213e2246ff8df5f399f207d4a66c2a88ac596836e7b3daa6e2415e14403070"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2861,
+      "sha256": "44a3f0efefb9a4a820f8feed2bafb06590ebb8c578f6eef0e01908de15b83ecf"
+    },
+    {
+      "path": "docs/PUBLICATION_BOUNDARY.md",
+      "bytes": 2177,
+      "sha256": "40ec1a9e1a41f612ff8472c92d009662e79453cf36ef1e7f5f94ddefd4071fbf"
+    },
+    {
+      "path": "infrastructure/compose.yaml",
+      "bytes": 2585,
+      "sha256": "48d0effd9bccba9a6fa65f806d5bacdb1dac4e86084a548a4fb1f0ebe23a382d"
+    },
+    {
+      "path": "infrastructure/env.example",
+      "bytes": 398,
+      "sha256": "b16268be445daa51e7b58b4b3122f0c63d46a05bfc52f8b4eeb1fc1a9d8ca9ab"
+    },
+    {
+      "path": "ontology/candidate-query.rq",
+      "bytes": 251,
+      "sha256": "9cc655d0b49d96b4a76c2af5f015693a1ddccf2bdb698de7d4c08db568b084a1"
+    },
+    {
+      "path": "ontology/competency-queries.rq",
+      "bytes": 691,
+      "sha256": "63007463d60c28764d2e80d7ac40fb8b203b084bea366d4ff5fe245c5475c9b4"
+    },
+    {
+      "path": "ontology/dalila-shapes.ttl",
+      "bytes": 1414,
+      "sha256": "9420a58dc192afdb8276bcf6b229b6fbe7d6b55a9341e6d10eacf96738b35074"
+    },
+    {
+      "path": "ontology/dalila.ttl",
+      "bytes": 5156,
+      "sha256": "0ea9b2db708b02d4d30415464f08298be25a59cc018b160096d9d5df5dd05f07"
+    },
+    {
+      "path": "schemas/evaluation-case.schema.json",
+      "bytes": 3961,
+      "sha256": "f86542450330e080aff041ccde5993c27d2a520b06270fa403dc7746d9e299b8"
+    },
+    {
+      "path": "schemas/examples/foundation-evaluation-drafts.json",
+      "bytes": 9501,
+      "sha256": "b464b248358ceaf959ef77081fbf08a0821c63bd7f17b40b24e6170b3529f642"
+    },
+    {
+      "path": "schemas/examples/multilingual-evaluation-drafts.json",
+      "bytes": 228891,
+      "sha256": "e68fbf11b5632aaf4a65e6dc56dc35fc6088115b401e7d5884cfc49959616491"
+    },
+    {
+      "path": "schemas/regulatory-article-candidate.schema.json",
+      "bytes": 1314,
+      "sha256": "725b6e08c74279839fd8073a24d70a9cfa21439a607f194b16325e7014b96b09"
+    },
+    {
+      "path": "scripts/build_local_workspace.py",
+      "bytes": 5714,
+      "sha256": "f848cf52102caa0717cd413e9e45ad970f7eab8d7c8054bb3490b7cced6fa19d"
+    },
+    {
+      "path": "scripts/deduplicate_local_pdfs.py",
+      "bytes": 1699,
+      "sha256": "4d0bd46127946ccc00173c79dd2ea08bad5135bb44a0a241190038ce9d3ee751"
+    },
+    {
+      "path": "scripts/prepare_redis_acl.py",
+      "bytes": 889,
+      "sha256": "5bcde81ed7b3998b087d1198905dff0c377a83d70323d6f930ec9f9197793331"
+    },
+    {
+      "path": "scripts/verify_local_workspace.py",
+      "bytes": 1325,
+      "sha256": "b164c2e801a8d6c27a80ea84381520059d72e930a2acd53ab8f53c5d3e6d7cea"
+    },
+    {
+      "path": "scripts/write_public_manifest.py",
+      "bytes": 1487,
+      "sha256": "60f92f9f8260fa27c15a4097c8eeb9a274a621572ad049b881b09af9d1970941"
+    },
+    {
+      "path": "tests/test_local_workspace.py",
+      "bytes": 1037,
+      "sha256": "ec460de28e41d07418bdc9fdb5fb045470087eb7e55f8039a3c840dc001abffb"
+    }
+  ],
+  "file_count": 21,
+  "total_bytes": 273533
+}

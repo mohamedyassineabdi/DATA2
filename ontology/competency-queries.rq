@@ -1,0 +1,15 @@
+﻿# Candidate graph competency checks
+# Run each query separately against the named frozen candidate graph. Counts are not legal validation.
+
+# How many candidate articles have a page and evidence?
+PREFIX d: <https://dalila.example/vocab/>
+SELECT (COUNT(DISTINCT ?article) AS ?articles) WHERE {
+ GRAPH <urn:dalila:candidate:frozen-v5> {
+  ?article a d:LegalArticleCandidate ; d:sourcePage ?page ; d:hasEvidence ?source ; d:reviewStatus "unvalidated" .
+ }
+}
+
+# Safety invariant (execute independently):
+# PREFIX d: <https://dalila.example/vocab/>
+# ASK { GRAPH <urn:dalila:candidate:frozen-v5> { ?subject d:appliesTo ?object } }
+# Expected: false; applicability requires independent review.

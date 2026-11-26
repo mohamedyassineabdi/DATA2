@@ -1,0 +1,79 @@
+name: dalila-foundation
+services:
+  mariadb:
+    image: mariadb:10.11.14
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:?set in local env file}
+      MARIADB_DATABASE: afi_restricted
+    volumes: [mariadb_data:/var/lib/mysql]
+    ports: ['127.0.0.1:13316:3306']
+    networks: [isolated]
+    healthcheck:
+      test: ['CMD', 'healthcheck.sh', '--connect', '--innodb_initialized']
+      interval: 10s
+      timeout: 5s
+      retries: 12
+  postgis:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: dalila
+      POSTGRES_DB: dalila_candidate
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set in local env file}
+    volumes: [postgis_data:/var/lib/postgresql/data]
+    ports: ['127.0.0.1:15432:5432']
+    networks: [isolated]
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U dalila -d dalila_candidate']
+      interval: 10s
+      timeout: 5s
+      retries: 12
+  qdrant:
+    image: qdrant/qdrant:v1.15.5@sha256:0fb8897412abc81d1c0430a899b9a81eb8328aa634e7242d1bc804c1fe8fe863
+    environment:
+      QDRANT__SERVICE__API_KEY: ${QDRANT_API_KEY:?set in local env file}
+    volumes: [qdrant_data:/qdrant/storage]
+    ports: ['127.0.0.1:16333:6333']
+    networks: [isolated]
+    healthcheck:
+      test: ['CMD-SHELL', 'bash -c "echo > /dev/tcp/127.0.0.1/6333"']
+      interval: 10s
+      timeout: 5s
+      retries: 12
+  fuseki:
+    image: stain/jena-fuseki:latest@sha256:b1d0c96f19adddef417520184471ac816cf36c6e72936a88ea02b29f4305929a
+    environment:
+      ADMIN_PASSWORD: ${FUSEKI_ADMIN_PASSWORD:?set in local env file}
+      TDB: '2'
+      FUSEKI_DATASET_1: candidate
+    volumes: [fuseki_data:/fuseki]
+    ports: ['127.0.0.1:13030:3030']
+    networks: [isolated]
+    healthcheck:
+      test: ['CMD-SHELL', 'curl -fsS http://localhost:3030/$$/ping >/dev/null']
+      interval: 10s
+      timeout: 5s
+      retries: 15
+  redis:
+    image: redis:7.4.2-alpine
+    profiles: ['coordination']
+    environment:
+      REDIS_COORDINATION_PASSWORD: ${REDIS_COORDINATION_PASSWORD:?set in local env file}
+    command: ['redis-server', '--appendonly', 'yes', '--aclfile', '/run/secrets/redis-users.acl']
+    volumes:
+      - redis_data:/data
+      - ./redis-users.local.acl:/run/secrets/redis-users.acl:ro
+    networks: [isolated]
+    healthcheck:
+      test: ['CMD-SHELL', 'REDISCLI_AUTH="$$REDIS_COORDINATION_PASSWORD" redis-cli --user dalila ping | grep -qx PONG']
+      interval: 10s
+      timeout: 5s
+      retries: 12
+networks:
+  isolated:
+    internal: true
+volumes:
+  mariadb_data:
+  postgis_data:
+  qdrant_data:
+  redis_data:
+  fuseki_data:

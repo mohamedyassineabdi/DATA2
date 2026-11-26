@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dalila page-level regulatory article candidate",
+  "type": "object",
+  "required": ["document_sha256", "version_id", "article_number", "original_text_candidate", "source_page", "source_text_sha256", "extraction_method", "review_status"],
+  "properties": {
+    "document_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "version_id": {"type": "string"},
+    "article_number": {"type": "string", "minLength": 1},
+    "original_text_candidate": {"type": "string"},
+    "source_page": {"type": "integer", "minimum": 1},
+    "source_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "extraction_method": {"enum": ["native_text", "tesseract_best", "human_transcription"]},
+    "capture_times": {"type": "array", "items": {"type": "string"}},
+    "source_urls": {"type": "array", "items": {"type": "string"}},
+    "applicable_industrial_zone": {"type": ["string", "null"]},
+    "obligations": {"type": "array"}, "prohibitions": {"type": "array"},
+    "permissions": {"type": "array"}, "quantitative_restrictions": {"type": "array"},
+    "exceptions": {"type": "array"}, "detected_numbers": {"type": "array", "items": {"type": "string"}},
+    "review_status": {"enum": ["unvalidated", "reviewed", "validated"]}
+  }
+}

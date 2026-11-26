@@ -1,0 +1,46 @@
+@prefix d: <https://dalila.example/vocab/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://dalila.example/vocab/> a owl:Ontology ; rdfs:label "Dalila candidate vocabulary"@en, "Vocabulaire candidat Dalila"@fr, "مفردات دليلة المرشحة"@ar .
+d:IndustrialZone a owl:Class ; rdfs:label "Industrial zone"@en, "Zone industrielle"@fr, "منطقة صناعية"@ar .
+d:Plot a owl:Class ; rdfs:label "Plot"@en, "Lot"@fr, "مقسم"@ar .
+d:Infrastructure a owl:Class ; rdfs:label "Infrastructure"@en, "Infrastructure"@fr, "بنية تحتية"@ar .
+d:IndustrialActivity a owl:Class ; rdfs:label "Industrial activity"@en, "Activité industrielle"@fr, "نشاط صناعي"@ar .
+d:InvestorRequirement a owl:Class ; rdfs:label "Investor requirement"@en, "Exigence investisseur"@fr, "متطلبات المستثمر"@ar .
+d:AdministrativeProcedure a owl:Class ; rdfs:label "Administrative procedure"@en, "Procédure administrative"@fr, "إجراء إداري"@ar .
+d:RegulatoryDocument a owl:Class ; rdfs:label "Regulatory document"@en, "Document réglementaire"@fr, "وثيقة تنظيمية"@ar .
+d:DocumentCandidate a owl:Class ; rdfs:label "Document candidate"@en, "Document candidat"@fr, "وثيقة مرشحة"@ar .
+d:LegalArticleCandidate a owl:Class ; rdfs:label "Legal article candidate"@en, "Article juridique candidat"@fr, "مادة قانونية مرشحة"@ar .
+d:Restriction a owl:Class ; rdfs:label "Restriction"@en, "Restriction"@fr, "قيد"@ar .
+d:Obligation a owl:Class ; rdfs:label "Obligation"@en, "Obligation"@fr, "التزام"@ar .
+d:Prohibition a owl:Class ; rdfs:label "Prohibition"@en, "Interdiction"@fr, "حظر"@ar .
+d:Permission a owl:Class ; rdfs:label "Permission"@en, "Autorisation"@fr, "ترخيص"@ar .
+d:QuantitativeRestriction a owl:Class ; rdfs:subClassOf d:Restriction ; rdfs:label "Quantitative restriction"@en, "Restriction quantitative"@fr, "قيد كمي"@ar .
+d:Exception a owl:Class ; rdfs:label "Exception"@en, "Exception"@fr, "استثناء"@ar .
+d:PriceObservation a owl:Class ; rdfs:label "Price observation"@en, "Observation de prix"@fr, "ملاحظة سعر"@ar .
+d:GeographicEntity a owl:Class ; rdfs:label "Geographic entity"@en, "Entité géographique"@fr, "كيان جغرافي"@ar .
+d:EvidenceSource a owl:Class ; rdfs:label "Evidence source"@en, "Source de preuve"@fr, "مصدر الدليل"@ar .
+d:InstitutionalPassageCandidate a owl:Class ; rdfs:label "Institutional passage candidate"@en, "Passage institutionnel candidat"@fr, "مقطع مؤسسي مرشح"@ar .
+d:locatedIn a owl:ObjectProperty ; rdfs:label "located in"@en, "situé dans"@fr, "يقع في"@ar .
+d:hasRestriction a owl:ObjectProperty ; rdfs:range d:Restriction ; rdfs:label "has restriction"@en, "a une restriction"@fr, "له قيد"@ar .
+d:appliesTo a owl:ObjectProperty ; rdfs:label "applies to"@en, "s'applique à"@fr, "ينطبق على"@ar .
+d:hasProcedure a owl:ObjectProperty ; rdfs:range d:AdministrativeProcedure ; rdfs:label "has procedure"@en, "a une procédure"@fr, "له إجراء"@ar .
+d:hasPriceObservation a owl:ObjectProperty ; rdfs:range d:PriceObservation ; rdfs:label "has price observation"@en, "a une observation de prix"@fr, "له ملاحظة سعر"@ar .
+d:hasEvidence a owl:ObjectProperty ; rdfs:range d:EvidenceSource ; rdfs:label "has evidence"@en, "a pour preuve"@fr, "له دليل"@ar .
+d:fromDocument a owl:ObjectProperty ; rdfs:range d:DocumentCandidate .
+d:sourceHash a owl:DatatypeProperty ; rdfs:range xsd:string .
+d:sourcePage a owl:DatatypeProperty ; rdfs:range xsd:integer .
+d:articleNumber a owl:DatatypeProperty ; rdfs:range xsd:string .
+d:extractedText a owl:DatatypeProperty ; rdfs:range xsd:string .
+d:reviewStatus a owl:DatatypeProperty ; rdfs:range xsd:string .
+d:sourceUrl a owl:DatatypeProperty ; rdfs:range xsd:anyURI .
+d:captureTime a owl:DatatypeProperty ; rdfs:range xsd:string .
+d:extractionMethod a owl:DatatypeProperty ; rdfs:range xsd:string .
+# Draft labels for dialect-aware development; native-speaker linguistic review pending.
+d:IndustrialZone rdfs:label "Zone industrielle"@ar-TN, "منطقة صناعية"@ar-DZ, "منطقة صناعية"@ar-LY, "منطقة صناعية"@ar-001, "Industriegebiet"@de, "Sanayi bölgesi"@tr .
+d:Plot rdfs:label "مقسم"@ar-TN, "قطعة أرض"@ar-DZ, "قطعة أرض"@ar-LY, "مقسم"@ar-001, "Grundstück"@de, "Parsel"@tr .
+d:Infrastructure rdfs:label "بنية تحتية"@ar-TN, "بنية تحتية"@ar-DZ, "بنية تحتية"@ar-LY, "بنية تحتية"@ar-001, "Infrastruktur"@de, "Altyapı"@tr .
+d:RegulatoryDocument rdfs:label "وثيقة تنظيمية"@ar-TN, "وثيقة تنظيمية"@ar-DZ, "وثيقة تنظيمية"@ar-LY, "وثيقة تنظيمية"@ar-001, "Regelungsdokument"@de, "Düzenleyici belge"@tr .
+d:LegalArticleCandidate rdfs:label "فصل قانوني مرشح"@ar-TN, "مادة قانونية مرشحة"@ar-DZ, "مادة قانونية مرشحة"@ar-LY, "مادة قانونية مرشحة"@ar-001, "Kandidat für einen Rechtsartikel"@de, "Hukuki madde adayı"@tr .
