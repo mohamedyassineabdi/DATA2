@@ -171,8 +171,8 @@
     },
     {
       "path": "scripts/setup_data.py",
-      "bytes": 19918,
-      "sha256": "9929bdab0218fdd6ed8d6c7b178977d33611810b0d5972ed6541388c629223de"
+      "bytes": 19525,
+      "sha256": "ec7d5f6dee6d9bfcc69bfc2a34a4f2738c6fe3cd12e1c7c1091b6eb5c5d33357"
     },
     {
       "path": "scripts/verify_candidate_data.py",
@@ -196,8 +196,8 @@
     },
     {
       "path": "scripts/write_public_manifest.py",
-      "bytes": 2045,
-      "sha256": "6a1e5f1a1e309869314be5c4d28eb1e408809eb6148de028f4b3ce3bce69453f"
+      "bytes": 2251,
+      "sha256": "15dc5704f584d63fd45a1ae85b8966a4623f3ed93513a5a41ecc3c077d13be7e"
     },
     {
       "path": "setup_data.ps1",
@@ -226,10 +226,10 @@
     },
     {
       "path": "tests/test_setup_data.py",
-      "bytes": 2002,
-      "sha256": "def4e7d21e25c1ff164be805a999923234be19f2a29ebb491b8f41a3680f802c"
+      "bytes": 1955,
+      "sha256": "48442d2cde0f568588da9758cd1ed454851f94aaebbab1cee0734b93c11ec40e"
     }
   ],
   "file_count": 45,
-  "total_bytes": 370404
+  "total_bytes": 370170
 }

@@ -26,6 +26,8 @@ def main():
             if not is_public_file(path):
                 continue
             relative = path.relative_to(ROOT).as_posix()
+            if path.suffix.lower() not in {'.png', '.pdf', '.zip'} and b'\r\n' in path.read_bytes():
+                raise ValueError(f'Normalize line endings to LF before manifest generation: {relative}')
             files.append({'path': relative, 'bytes': path.stat().st_size,
                           'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
     files.sort(key=lambda item: item['path'])
