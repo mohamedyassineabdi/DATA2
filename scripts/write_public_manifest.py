@@ -5,7 +5,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ALLOWED = ('README.md', 'DATA_STATUS.md', 'requirements.txt', '.gitignore', '.gitattributes',
+ALLOWED = ('README.md', 'DATA_STATUS.md', 'requirements.txt', 'setup_data.ps1', 'setup_data.sh',
+           '.gitignore', '.gitattributes',
            'ontology', 'schemas', 'infrastructure', 'scripts', 'tests', 'docs', 'manifests')
 
 

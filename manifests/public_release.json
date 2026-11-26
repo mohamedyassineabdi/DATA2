@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4218,
-      "sha256": "21d7a086dd090cd07dd1f4be4d35ff4fea44c2f7aac07fedc81be78f0d992ba3"
+      "bytes": 21913,
+      "sha256": "20ea53508658d091ac3b0b6fc29adb044edce26eb5b8ea0b257cedc96d87535f"
     },
     {
       "path": "docs/ARCHITECTURE.md",
@@ -170,6 +170,11 @@
       "sha256": "f74eec2fed7b2c707a6e9d71d0bf11aeb5fc9134970c5a4352fca676b14cf5be"
     },
     {
+      "path": "scripts/setup_data.py",
+      "bytes": 19918,
+      "sha256": "9929bdab0218fdd6ed8d6c7b178977d33611810b0d5972ed6541388c629223de"
+    },
+    {
       "path": "scripts/verify_candidate_data.py",
       "bytes": 5453,
       "sha256": "40df8e6cf278631b5536e19113d95f23681d03ba0b0ed51596f3950aaa155e7b"
@@ -191,8 +196,18 @@
     },
     {
       "path": "scripts/write_public_manifest.py",
-      "bytes": 1999,
-      "sha256": "68ab44105add0c10f33cf7104499ab0ed1a2b7cc046039dd1575d0d49b7f240b"
+      "bytes": 2045,
+      "sha256": "6a1e5f1a1e309869314be5c4d28eb1e408809eb6148de028f4b3ce3bce69453f"
+    },
+    {
+      "path": "setup_data.ps1",
+      "bytes": 954,
+      "sha256": "b477ae2f378d9de2505c76e5d063888c2fb2a36956b19638b0e8a0b1f4d0b88e"
+    },
+    {
+      "path": "setup_data.sh",
+      "bytes": 87,
+      "sha256": "7ff6c4dba588cdb64f5fee416e895cf3e906bdadf931a6e3f1bc11f5282ad5ee"
     },
     {
       "path": "tests/test_candidate_loader.py",
@@ -208,8 +223,13 @@
       "path": "tests/test_public_manifest.py",
       "bytes": 782,
       "sha256": "29db6bdfa5ed6d9728a911bc78a6743f5ca6b6699053aca19dc852d5aee4de1b"
+    },
+    {
+      "path": "tests/test_setup_data.py",
+      "bytes": 2002,
+      "sha256": "def4e7d21e25c1ff164be805a999923234be19f2a29ebb491b8f41a3680f802c"
     }
   ],
-  "file_count": 41,
-  "total_bytes": 329702
+  "file_count": 45,
+  "total_bytes": 370404
 }
